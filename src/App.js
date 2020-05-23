@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import ThreadList from "./components/ThreadList/ThreadList";
+import ThreadBody from "./components/Thread/ThreadBody";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex flex-col max-h-screen overflow-hidden">
+      <Header />
+      <div className="flex flex-grow overflow-auto">
+        <div className="">
+          <Sidebar />
+        </div>
+        <main className="flex w-full">
+          <ThreadList />
+          <ThreadBody />
+        </main>
+      </div>
     </div>
   );
 }
